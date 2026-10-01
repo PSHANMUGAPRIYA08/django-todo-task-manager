@@ -1,0 +1,445 @@
+/* =========================
+   General
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+    margin: 0;
+    padding: 30px;
+    transition: 0.3s;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   Header
+========================= */
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.container > p {
+    text-align: center;
+}
+
+
+/* =========================
+   Statistics
+========================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.stat-box {
+    background: #f1f5ff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.stat-box:hover {
+    transform: translateY(-3px);
+}
+
+.stat-box p {
+    margin: 0 0 8px;
+    color: #666;
+}
+
+.stat-box strong {
+    font-size: 28px;
+    color: #2563eb;
+}
+
+
+/* =========================
+   Forms
+========================= */
+
+form {
+    margin-bottom: 15px;
+}
+
+input,
+select {
+    padding: 11px 12px;
+    margin: 5px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+}
+
+
+/* =========================
+   Buttons
+========================= */
+
+button {
+    padding: 11px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+
+/* =========================
+   Tasks
+========================= */
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px;
+    margin: 12px 0;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    transition: 0.2s;
+}
+
+.task:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    transform: translateY(-2px);
+}
+
+.task-info {
+    flex: 1;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+
+/* =========================
+   Task Buttons
+========================= */
+
+.task-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.task-actions a,
+.task-actions button {
+    text-decoration: none;
+    color: white;
+}
+
+.delete-btn {
+    background: #dc3545;
+}
+
+.complete-btn {
+    background: #198754;
+}
+
+.edit-btn {
+    background: #2563eb;
+}
+
+.clear-btn {
+    background: #6b7280;
+}
+
+
+/* =========================
+   Priority
+========================= */
+
+.priority-high {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.priority-medium {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.priority-low {
+    color: #198754;
+    font-weight: bold;
+}
+
+
+/* =========================
+   Overdue
+========================= */
+
+.overdue {
+    color: #dc3545;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   Empty State
+========================= */
+
+.empty-state {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.empty-state h2 {
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: #666;
+}
+
+
+/* =========================
+   Links
+========================= */
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .task {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .task-actions {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    input,
+    select {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 5px 0;
+    }
+
+    button {
+        margin-top: 5px;
+    }
+}
+/* =========================
+   Theme Toggle
+========================= */
+
+.theme-btn {
+    display: block;
+    margin: 10px auto 20px;
+    background: #111827;
+    color: white;
+}
+
+
+/* =========================
+   Dark Mode
+========================= */
+
+body.dark-mode {
+    background: #111827;
+    color: #f9fafb;
+}
+
+body.dark-mode .container {
+    background: #1f2937;
+}
+
+body.dark-mode .stat-box {
+    background: #374151;
+}
+
+body.dark-mode .stat-box p {
+    color: #d1d5db;
+}
+
+body.dark-mode .stat-box strong {
+    color: #60a5fa;
+}
+
+body.dark-mode .task {
+    background: #374151;
+    border-color: #4b5563;
+}
+
+body.dark-mode .empty-state {
+    background: #374151;
+}
+
+body.dark-mode .empty-state p {
+    color: #d1d5db;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+    background: #374151;
+    color: white;
+    border-color: #6b7280;
+}
+
+body.dark-mode input::placeholder {
+    color: #d1d5db;
+}
+
+body.dark-mode a {
+    color: #60a5fa;
+}
+/* =========================
+   Authentication Pages
+========================= */
+
+.auth-container {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+.auth-card h1 {
+    margin-bottom: 8px;
+}
+
+.auth-icon {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.auth-subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+.auth-card label {
+    display: block;
+    margin: 12px 5px 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.auth-card input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0 10px;
+}
+
+.auth-button {
+    width: 100%;
+    margin-top: 15px;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   Dark Mode - Auth Pages
+========================= */
+
+body.dark-mode .auth-card {
+    background: #1f2937;
+}
+
+body.dark-mode .auth-subtitle {
+    color: #d1d5db;
+}
+
+body.dark-mode .auth-card label {
+    color: #f9fafb;
+}
+
+body.dark-mode .auth-footer {
+    color: #f9fafb;
+}
+
+body.dark-mode .error-message {
+    background: #451a1a;
+    color: #fca5a5;
+}
